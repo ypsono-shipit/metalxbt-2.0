@@ -91,7 +91,7 @@ export default function CommodityDetailPage({ params }: { params: Promise<{ id: 
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-8 card p-5">
           <h2 className="section-title mb-4">{commodity.name} Price Chart</h2>
-          <PriceChart symbol={commodity.symbol} color={commodity.color} />
+          <PriceChart commodityId={commodity.id} color={commodity.color} />
         </div>
 
         <div className="col-span-4 space-y-4">
