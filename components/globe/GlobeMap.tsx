@@ -80,7 +80,7 @@ export default function GlobeMap() {
       mGroup = new T.Group()
       scene.add(mGroup)
 
-      function makeSprite(color: string): T.Sprite {
+      function makeSprite(color: string): import('three').Sprite {
         const sz = 96
         const c2 = document.createElement('canvas')
         c2.width = sz; c2.height = sz
