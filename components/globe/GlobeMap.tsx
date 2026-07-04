@@ -28,8 +28,9 @@ export default function GlobeMap() {
   const filtered = filter === 'All' ? COMPANIES : COMPANIES.filter(c => c.commodity.includes(filter))
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
+    const _canvas = canvasRef.current
+    if (!_canvas) return
+    const canvas: HTMLCanvasElement = _canvas
     let animId: number
     let THREE!: typeof import('three')
     let globe!: import('three').Mesh
@@ -46,7 +47,6 @@ export default function GlobeMap() {
     let targetCamZ = 3.0
     let targetQ: import('three').Quaternion | null = null
     ;(async () => {
-      if (!canvas) return
       const T = await import('three')
       THREE = T
 
