@@ -115,7 +115,7 @@ export default function GlobeMap() {
         const rect = canvas.getBoundingClientRect()
         const mx = ((e.clientX - rect.left) / rect.width) * 2 - 1
         const my = -((e.clientY - rect.top) / rect.height) * 2 + 1
-        rc.setFromCamera({ x: mx, y: my }, camera)
+        rc.setFromCamera(new T.Vector2(mx, my), camera)
         const hits = rc.intersectObjects(sprites.map(s => s.sprite))
         if (hits.length > 0) {
           const co = (hits[0].object as any).__co as MiningCompany
@@ -151,7 +151,7 @@ export default function GlobeMap() {
           const rect = canvas.getBoundingClientRect()
           const mx = ((e.clientX - rect.left) / rect.width) * 2 - 1
           const my = -((e.clientY - rect.top) / rect.height) * 2 + 1
-          rc.setFromCamera({ x: mx, y: my }, camera)
+          rc.setFromCamera(new T.Vector2(mx, my), camera)
           const hits = rc.intersectObjects(sprites.map(s => s.sprite))
           if (hits.length > 0) {
             const co = (hits[0].object as any).__co as MiningCompany
