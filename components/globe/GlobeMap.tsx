@@ -31,12 +31,12 @@ export default function GlobeMap() {
     const canvas = canvasRef.current
     if (!canvas) return
     let animId: number
-    let THREE: typeof import('three')
-    let globe: import('three').Mesh
-    let mGroup: import('three').Group
-    let camera: import('three').PerspectiveCamera
-    let renderer: import('three').WebGLRenderer
-    let scene: import('three').Scene
+    let THREE!: typeof import('three')
+    let globe!: import('three').Mesh
+    let mGroup!: import('three').Group
+    let camera!: import('three').PerspectiveCamera
+    let renderer!: import('three').WebGLRenderer
+    let scene!: import('three').Scene
     let sprites: { sprite: import('three').Sprite; co: MiningCompany }[] = []
     let isDragging = false
     let prevMouse = { x: 0, y: 0 }
@@ -46,6 +46,7 @@ export default function GlobeMap() {
     let targetCamZ = 3.0
     let targetQ: import('three').Quaternion | null = null
     ;(async () => {
+      if (!canvas) return
       const T = await import('three')
       THREE = T
 
